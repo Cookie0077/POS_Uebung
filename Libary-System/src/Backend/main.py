@@ -1,13 +1,12 @@
 from fastapi import FastAPI
-import Tierheim_Flask.routers.animals as animals
-from Tierheim_Flask.database import engine
-import Tierheim_Flask.models as models
+from routers.Books import router
+import models
 
 
-models.Base.metadata.create_all(bind=engine)
+#models.Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title='Tierheim', description='mYaPP', version='1.0.0')
-app.include_router(animals.router)
+app = FastAPI(title='Libary', description='mYaPP', version='1.0.0')
+app.include_router(router)
 
 @app.get("/")
 def root():

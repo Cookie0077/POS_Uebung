@@ -11,6 +11,7 @@ class Books():
     author = Column(String, index=True)
     publisher = Column(String,index=True)
     publishedYear = Column(Integer,index=True)
+    isAvailable = Column(Boolean,index=True)
 
 class Loans():
     __tablename__ = "Loans"
